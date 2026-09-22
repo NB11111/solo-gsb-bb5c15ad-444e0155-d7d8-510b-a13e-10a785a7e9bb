@@ -1,0 +1,21 @@
+services:
+  api:
+    build: .
+    image: cross-source-event-alignment:latest
+    container_name: event-alignment-api
+    ports:
+      - "8000:8000"
+    environment:
+      ALIGN_DB_PATH: /data/alignment.db
+    volumes:
+      - alignment-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+volumes:
+  alignment-data:

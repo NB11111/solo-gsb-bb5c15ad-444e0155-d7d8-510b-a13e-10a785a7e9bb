@@ -1,0 +1,12 @@
+{
+  "events_a": [
+    {"id": "a1", "timestamp": "2026-09-22T10:00:00Z", "source_key": "sensor-a", "payload_summary": "door open"},
+    {"id": "a2", "timestamp": "2026-09-22T10:00:10Z", "source_key": "sensor-a", "payload_summary": "door close"},
+    {"id": "a3", "timestamp": "2026-09-22T10:05:00Z", "source_key": "sensor-a", "payload_summary": "lonely event"}
+  ],
+  "events_b": [
+    {"id": "b1", "timestamp": "2026-09-22T10:00:02Z", "source_key": "camera-b", "payload_summary": "motion near door"},
+    {"id": "b2", "timestamp": "2026-09-22T10:00:09Z", "source_key": "camera-b", "payload_summary": "motion ends"}
+  ],
+  "tolerance_seconds": 5
+}
